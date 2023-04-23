@@ -1,6 +1,6 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.applicataion)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -46,22 +46,18 @@ android {
     }
 }
 
-private val composeVersion by extra("1.4.2")
-
 dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecicle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material3)
 
-    implementation("androidx.core:core-ktx:1.10.0")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.activity:activity-compose:1.7.1")
-    implementation("androidx.compose.ui:ui:$composeVersion")
-    implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
-    implementation("androidx.compose.material3:material3:1.1.0-rc01")
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.bundles.androidx.test)
+    androidTestImplementation(libs.androidx.compose.ui.test.junit)
 
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
-
-    debugImplementation("androidx.compose.ui:ui-tooling:${composeVersion}")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:$composeVersion")
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 }

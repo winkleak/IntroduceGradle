@@ -52,6 +52,7 @@ dependencies {
     androidTestImplementation(composeBom)
     debugImplementation(composeBom)
 
+    implementation(project(":feature"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecicle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

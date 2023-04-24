@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "GradleIntro"
 include(":app")
+include(":feature")

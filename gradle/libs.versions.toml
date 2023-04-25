@@ -1,5 +1,6 @@
 [versions]
 androidPlugin = "8.0.0"
+kotlinAndroid = "1.8.20"
 androidxComposeBom = "2023.04.01"
 
 [libraries]
@@ -18,10 +19,13 @@ junit = "junit:junit:4.13.2"
 androidx-test-ext-junit = "androidx.test.ext:junit:1.1.5"
 androidx-test-espresso-core = "androidx.test.espresso:espresso-core:3.5.1"
 
+android-library = { module = "com.android.library:com.android.library.gradle.plugin",  version.ref = "androidPlugin" }
+kotlin-android = { module = "org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin", version.ref = "kotlinAndroid" }
+
 [bundles]
 androidx-test = ["androidx-test-ext-junit", "androidx-test-espresso-core"]
 
 [plugins]
 android-applicataion = { id = "com.android.application", version.ref = "androidPlugin" }
 android-library = { id = "com.android.library", version.ref = "androidPlugin" }
-kotlin-android = { id = "org.jetbrains.kotlin.android", version = "1.8.20" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlinAndroid" }

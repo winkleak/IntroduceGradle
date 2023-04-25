@@ -1,4 +1,5 @@
 pluginManagement {
+    includeBuild("build-conventions")
     repositories {
         google()
         mavenCentral()
